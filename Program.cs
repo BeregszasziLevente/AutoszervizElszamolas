@@ -16,3 +16,13 @@ foreach (string sor in sorok)
 
     szerelok.Add(peldany);
 }
+
+int Munkaber = 0;
+
+foreach (Szerelo sor in szerelok)
+{
+    Munkaber += sor.Munkaora * 4000 + sor.JavitottAutok * 5000;
+    if (sor.JavitottAutok>=6 && sor.GarancialisJavitasok!<1)    Munkaber += 15000;
+    if (sor.GarancialisJavitasok >= 2) Munkaber -= 10000;
+
+}
